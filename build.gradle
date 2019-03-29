@@ -27,6 +27,7 @@ targetCompatibility = 1.8
 dependencies {
 	testCompile "junit:junit:4.12"
 	compileOnly "org.projectlombok:lombok:1.16.4"
+    compile 'org.apache.commons:commons-lang3:3.7' //Apache Commons Lang3を依存関係に追加
 }
 
 tasks.withType(JavaCompile)

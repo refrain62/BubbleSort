@@ -6,21 +6,31 @@ public class App
   {
     BubbleSort bubbleSort = BubbleSort.getInstance();
     
-    // 探索データの定義
-    // ※対象データはクイックソートなどで事前に昇順に並んでいる前提
+    // ソートデータの定義
     int[] searchData = { 8, 4, 3, 7, 6, 5, 2, 1 };
+    int[] searchData2 = { 8, 4, 3, 7, 6, 5, 2, 1 };
 
     System.out.println("Bubble Sort App Start!");
     
-    // 検索データの出力
+    // ソートデータの出力
     outputSearchData(
             searchData
             );
     
-    // 探索（とりあえず開始時は全範囲指定）
+    // ソート（forループ版）
     bubbleSort.execute(
 	                    searchData
 	                    );
+    
+    // ソートデータの出力
+    outputSearchData(
+            searchData2
+            );
+    
+    // ソート（steam版）
+    bubbleSort.executeSteam(
+                        searchData2
+                        );
   }
 
   /**
