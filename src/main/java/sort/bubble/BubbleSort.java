@@ -29,38 +29,38 @@ public class BubbleSort
    * @return
    */
   public int[] execute(
-			            int[] argData
-			            )
+                  int[] argData
+                  )
   {
-	  int tempVal = -1;
-	  
-	  // 最後の１個前の要素まで確認する（インデックスの次の要素をチェックするので１回不要）
-	  for( int i = 0; i < argData.length - 1; i++ )
-	  {
-		  // 未チェックの範囲のみソートしていく
-		  for( int j = 0; j < argData.length - 1 - i; j++ )
-		  {
-			  // 要素の入れ替えが必要な場合は入れ替える
-			  if(		argData[ j + 1 ] < argData[ j ]
-				  )
-			  {
-				  tempVal = argData[ j ];
-				  
-				  argData[ j ] = argData[ j + 1 ];
-				  
-				  argData[ j + 1 ] = tempVal;
-			  }
-			  
-			  // 結果をログに出力
-			  this.outputArrayStatus(
-									argData,
-									i,
-									j
-				  					);
-		  }
-	  }
-	  
-	  return argData;
+    int tempVal = -1;
+    
+    // 最後の１個前の要素まで確認する（インデックスの次の要素をチェックするので１回不要）
+    for( int i = 0; i < argData.length - 1; i++ )
+    {
+      // 未チェックの範囲のみソートしていく
+      for( int j = 0; j < argData.length - 1 - i; j++ )
+      {
+        // 要素の入れ替えが必要な場合は入れ替える
+        if(   argData[ j + 1 ] < argData[ j ]
+          )
+        {
+          tempVal = argData[ j ];
+          
+          argData[ j ] = argData[ j + 1 ];
+          
+          argData[ j + 1 ] = tempVal;
+        }
+        
+        // 結果をログに出力
+        this.outputArrayStatus(
+                  argData,
+                  i,
+                  j
+                    );
+      }
+    }
+    
+    return argData;
   }
   
   /**
@@ -70,24 +70,24 @@ public class BubbleSort
    * @param argIndexJ
    */
   private void outputArrayStatus(
-		  						int[] argData,
-		  						int argIndexI,
-		  						int argIndexJ
-			  					)
+                  int[] argData,
+                  int argIndexI,
+                  int argIndexJ
+                  )
   {
-	String strDelimiter = "";
-	
-	System.out.print( "[i:" + argIndexI + ", j:" + argIndexJ + "] Array Data is [");
-	
-	strDelimiter = "";
-	
-	for( int val : argData )
-	{
-	  System.out.print( strDelimiter + val );
-	  
-	  strDelimiter = " ";
-	}
-	
-	System.out.println("]  ");
+  String strDelimiter = "";
+  
+  System.out.print( "[i:" + argIndexI + ", j:" + argIndexJ + "] Array Data is [");
+  
+  strDelimiter = "";
+  
+  for( int val : argData )
+  {
+    System.out.print( strDelimiter + val );
+    
+    strDelimiter = " ";
+  }
+  
+  System.out.println("]  ");
   }
 }
